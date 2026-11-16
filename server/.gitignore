@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Environment variables (Never commit real secrets or credentials)
+.env
+.env.local
+.env.*.local
+
+# Logs & OS files
+logs/
+*.log
+.DS_Store
+coverage/
+

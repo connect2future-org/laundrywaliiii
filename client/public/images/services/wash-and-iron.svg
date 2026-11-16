@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAFC"/>
+      <stop offset="100%" stop-color="#F8F1F8"/>
+    </linearGradient>
+    <linearGradient id="ironBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#850078"/>
+      <stop offset="100%" stop-color="#4B1248"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#wiBg)"/>
+  <circle cx="300" cy="200" r="140" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Folded crisp shirt base -->
+  <rect x="135" y="255" width="330" height="42" rx="14" fill="#FFFFFF" stroke="#EEE9EF" stroke-width="3"/>
+  <rect x="155" y="232" width="290" height="30" rx="10" fill="#F8F1F8" stroke="#E2CCE0" stroke-width="2"/>
+  <!-- Steam iron silhouette -->
+  <path d="M195 232 L425 232 C432 232 435 224 430 218 L390 156 C382 144 368 136 352 136 L252 136 C240 136 232 144 236 154 L244 176 L354 176 L364 196 L218 196 C204 196 190 212 195 232 Z" fill="url(#ironBody)"/>
+  <path d="M204 232 L426 232 C426 240 420 244 412 244 L214 244 C206 244 202 238 204 232 Z" fill="#C21885"/>
+  <!-- Steam wisps -->
+  <path d="M168 195 Q155 182 168 168" fill="none" stroke="#C21885" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+  <path d="M188 185 Q176 172 188 158" fill="none" stroke="#850078" stroke-width="3.5" stroke-linecap="round" opacity="0.45"/>
+</svg>

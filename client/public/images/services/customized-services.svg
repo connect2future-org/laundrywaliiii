@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="csBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAFC"/>
+      <stop offset="100%" stop-color="#F8F1F8"/>
+    </linearGradient>
+    <linearGradient id="csAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#850078"/>
+      <stop offset="100%" stop-color="#4B1248"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#csBg)"/>
+  <circle cx="300" cy="200" r="142" fill="#FFFFFF" opacity="0.88"/>
+  <!-- Minimalist garment hanger + custom care card -->
+  <path d="M300 105 C300 92 316 86 322 96 C326 102 318 110 310 114 L300 122" fill="none" stroke="#850078" stroke-width="5" stroke-linecap="round"/>
+  <path d="M300 122 L195 184 C185 190 189 204 202 204 L398 204 C411 204 415 190 405 184 Z" fill="none" stroke="#4B1248" stroke-width="5.5" stroke-linejoin="round"/>
+  <!-- Customization slider motif -->
+  <rect x="200" y="226" width="200" height="62" rx="18" fill="#FFFFFF" stroke="#EEE9EF" stroke-width="2.5"/>
+  <line x1="228" y1="247" x2="372" y2="247" stroke="#EEE9EF" stroke-width="5" stroke-linecap="round"/>
+  <line x1="228" y1="247" x2="318" y2="247" stroke="#850078" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="318" cy="247" r="9" fill="#850078"/>
+  <line x1="228" y1="268" x2="372" y2="268" stroke="#EEE9EF" stroke-width="5" stroke-linecap="round"/>
+  <line x1="228" y1="268" x2="276" y2="268" stroke="#C21885" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="276" cy="268" r="9" fill="#C21885"/>
+  <!-- Sparkle accent -->
+  <path d="M430 120 L435 134 L449 139 L435 144 L430 158 L425 144 L411 139 L425 134 Z" fill="#C21885" opacity="0.75"/>
+</svg>

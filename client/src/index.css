@@ -1,0 +1,7 @@
+/* Main Application CSS Entry */
+@import './styles/variables.css';
+@import './styles/typography.css';
+@import './styles/cards.css';
+@import './styles/buttons.css';
+@import './styles/global.css';
+@import './styles/responsive.css';

@@ -1,0 +1,168 @@
+/* Minimalist Luxury Cards & Surfaces */
+
+/* 1. Base Minimal Card */
+.card-royal,
+.card-modern-flat,
+.neu-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-card);
+  padding: 2rem;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-royal:hover,
+.card-modern-flat:hover,
+.neu-card:hover {
+  border-color: rgba(133, 0, 120, 0.25);
+  box-shadow: var(--shadow-flat-hover);
+  transform: translateY(-2px);
+}
+
+/* 2. Soft Ivory Surface */
+.card-ivory {
+  background: var(--color-cream, #FCFAFC);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+}
+
+/* 3. Editorial Feature Block */
+.card-feature-neu,
+.card-feature-royal {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-feature-neu:hover,
+.card-feature-royal:hover {
+  border-color: rgba(133, 0, 120, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-flat-hover);
+}
+
+/* 4. Image-Led Minimal Service Card */
+.card-service-royal {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-service-royal:hover {
+  border-color: rgba(133, 0, 120, 0.3);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-flat-hover);
+}
+
+.card-service-image-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--color-cream);
+  position: relative;
+}
+
+.card-service-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-service-royal:hover .card-service-image-wrap img {
+  transform: scale(1.03);
+}
+
+/* 5. Minimal Icon Badges */
+.card-icon-badge-pink {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: var(--color-pink-soft);
+  color: var(--color-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.card-icon-badge-purple {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: var(--color-purple-muted);
+  color: var(--color-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 6. Form Container */
+.card-form-container {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+/* 7. Input fields */
+.input-flat,
+.input-neu-inset {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-dark);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.input-flat:focus,
+.input-neu-inset:focus {
+  border-color: var(--color-primary-purple, #700F63);
+  box-shadow: 0 0 0 3px rgba(112, 15, 99, 0.12);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-purple);
+}
+
+.form-label .required {
+  color: var(--color-pink);
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: #B91C1C;
+  margin-top: 0.25rem;
+}

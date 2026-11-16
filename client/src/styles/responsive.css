@@ -1,0 +1,100 @@
+/* Responsive Stylesheet */
+
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+    --radius-2xl: 1.25rem;
+    --radius-xl: 1rem;
+  }
+
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .section-sm {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .section-title-wrap {
+    margin-bottom: 2.25rem;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .card-form-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .neu-card {
+    padding: 1.25rem;
+  }
+
+  .card-modern-flat {
+    padding: 1.25rem;
+  }
+
+  .modal-content {
+    max-height: 95vh;
+    border-radius: var(--radius-xl);
+    padding: 1.25rem;
+  }
+
+  /* Buttons on mobile */
+  .btn-pill-primary,
+  .btn-pill-secondary,
+  .btn-pill-outline,
+  .btn-pill-purple {
+    padding: 0.75rem 1.4rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-hero {
+    font-size: 1.85rem;
+  }
+
+  .heading-section {
+    font-size: 1.4rem;
+  }
+
+  .btn-stack-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-stack-mobile button,
+  .btn-stack-mobile a {
+    width: 100%;
+  }
+}
+
