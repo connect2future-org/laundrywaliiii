@@ -1,6 +1,6 @@
 export const BRAND_CONFIG = {
-  name: 'Laundry Waliii',
-  legalName: 'Laundry Waliii',
+  name: 'Laundry Waliiii',
+  legalName: 'Laundry Waliiii',
   tagline: 'Fresh Clothes. Happy People.',
   royalTagline: 'The Royal Wash of Mysore',
   shortDescription: 'The Royal Wash of Mysore. A Premium Laundry Care for Mysore’s Everyday Wardrobe.',
@@ -33,7 +33,7 @@ export const BRAND_CONFIG = {
     telHref: 'tel:+919035999272',
     smsHref: 'sms:+919035999272',
     email: 'hr@connect2future.com',
-    mailtoHref: 'mailto:hr@connect2future.com?subject=Laundry%20Walii%20Customer%20Inquiry',
+    mailtoHref: 'mailto:hr@connect2future.com?subject=Laundry%20Waliiii%20Customer%20Inquiry',
     whatsapp: '9035999272',
     whatsappNumber: '919035999272',
     whatsappBaseUrl: 'https://wa.me/919035999272',

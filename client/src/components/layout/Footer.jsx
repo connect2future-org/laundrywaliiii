@@ -69,10 +69,10 @@ export const Footer = () => {
         <div className="lw-footer-cols-grid">
           {/* COLUMN 1 – BRAND AND CONTACT INFORMATION */}
           <div className="footer-col col-brand-contact">
-            <Link to="/" className="footer-logo-link" aria-label="Laundry Waliii Home">
+            <Link to="/" className="footer-logo-link" aria-label="Laundry Waliiii Home">
               <img
                 src="/images/laundry-walii-official-logo-transparent.png"
-                alt="Laundry Waliii - Fresh Clothes. Happy People."
+                alt="Laundry Waliiii - Fresh Clothes. Happy People."
                 className="footer-logo-img"
                 width="54"
                 height="54"
@@ -153,7 +153,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-bubble-btn"
-                aria-label="Follow Laundry Waliii on Instagram"
+                aria-label="Follow Laundry Waliiii on Instagram"
               >
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
@@ -162,11 +162,11 @@ export const Footer = () => {
                 </svg>
               </a>
               <a
-                href={`${BRAND_CONFIG.contact.whatsappBaseUrl}?text=${encodeURIComponent('Hello Laundry Walii, I would like to know more about your laundry services.')}`}
+                href={`${BRAND_CONFIG.contact.whatsappBaseUrl}?text=${encodeURIComponent('Hello Laundry Waliiii, I would like to know more about your laundry services.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-bubble-btn"
-                aria-label="Chat with Laundry Walii on WhatsApp"
+                aria-label="Chat with Laundry Waliiii on WhatsApp"
               >
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.05 20.16C10.66 20.16 9.3 19.8 8.1 19.11L7.81 18.94L4.72 19.75L5.54 16.74L5.36 16.44C4.6 15.22 4.19 13.58 4.19 11.91C4.19 7.37 7.89 3.67 12.05 3.67ZM8.83 7.34C8.63 7.34 8.44 7.35 8.27 7.69C8.07 8.08 7.5 8.64 7.5 9.76C7.5 10.88 8.32 11.96 8.44 12.12C8.56 12.28 10.05 14.59 12.33 15.57C14.23 16.38 14.62 16.22 15.04 16.18C15.46 16.14 16.39 15.63 16.58 15.08C16.78 14.54 16.78 14.07 16.72 13.97C16.66 13.88 16.51 13.82 16.27 13.7C16.04 13.59 14.9 13.03 14.68 12.95C14.47 12.87 14.31 12.83 14.16 13.07C14 13.31 13.55 13.88 13.41 14.04C13.28 14.2 13.14 14.22 12.91 14.1C12.67 13.98 11.91 13.73 11.01 12.93C10.31 12.31 9.84 11.54 9.7 11.31C9.57 11.07 9.69 10.94 9.81 10.82C9.91 10.72 10.04 10.55 10.15 10.41C10.27 10.27 10.31 10.17 10.39 10.01C10.47 9.86 10.43 9.72 10.37 9.6C10.31 9.48 9.84 8.32 9.64 7.85C9.45 7.39 9.25 7.45 9.1 7.44C8.96 7.44 8.83 7.34 8.83 7.34Z"/>
@@ -179,7 +179,7 @@ export const Footer = () => {
         {/* BOTTOM COPYRIGHT AND LEGAL BAR */}
         <div className="footer-bottom-bar">
           <p className="copyright-text">
-            © 2026 Laundry Walii. All Rights Reserved.
+            © 2026 Laundry Waliiii. All Rights Reserved.
           </p>
           <div className="legal-links-wrap">
             <Link to="/privacy-policy" className="legal-anchor">Privacy Policy</Link>
@@ -191,7 +191,7 @@ export const Footer = () => {
 
       <style>{`
         /* ========================================================
-           LAUNDRY WALII — MINIMALIST SOFT WAVE FOOTER
+           LAUNDRY WALIIII — MINIMALIST SOFT WAVE FOOTER
            Soft white/light-lavender palette with subtle waves
            ======================================================== */
 

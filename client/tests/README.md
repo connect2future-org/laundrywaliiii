@@ -1,4 +1,4 @@
-# Laundry Walii — Frontend Testing Utilities
+# Laundry Waliiii — Frontend Testing Utilities
 
 This directory (`client/tests/`) contains end-to-end browser and UI verification scripts.
 

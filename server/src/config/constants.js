@@ -99,7 +99,7 @@ export const FRANCHISE_LEAD_STATUSES = [
 export const CONFIRMED_PRIMARY_BRANCH = {
   branchCode: 'LW-MYS-01',
   slug: 'mysore',
-  name: 'Laundry Waliii – Mysore',
+  name: 'Laundry Waliiii – Mysore',
   area: 'KD Road',
   city: 'Mysore',
   state: 'Karnataka',

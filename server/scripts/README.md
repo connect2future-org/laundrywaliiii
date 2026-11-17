@@ -1,4 +1,4 @@
-# Laundry Walii — Backend Development & Diagnostic Scripts
+# Laundry Waliiii — Backend Development & Diagnostic Scripts
 
 This directory (`server/scripts/`) contains standalone executable utilities for database and API testing against the Express API and MongoDB.
 

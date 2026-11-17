@@ -31,7 +31,7 @@ export const createApp = () => {
       if (isOriginAllowed(origin, cfg)) {
         callback(null, true);
       } else {
-        callback(new AppError(`Origin ${origin} not allowed by Laundry Walii CORS policy`, 403));
+        callback(new AppError(`Origin ${origin} not allowed by Laundry Waliiii CORS policy`, 403));
       }
     },
     credentials: true,

@@ -10,7 +10,7 @@ export const connectDatabase = async (overrideUri) => {
 
   if (!uri || uri.includes('<LAUNDRY_WALII')) {
     throw new Error(
-      'MONGO_URI is not configured. Set the dedicated Laundry Walii Atlas URI in server/.env.'
+      'MONGO_URI is not configured. Set the dedicated Laundry Waliiii Atlas URI in server/.env.'
     );
   }
 

@@ -4,6 +4,7 @@ import {
   listContactEnquiriesAdmin,
   updateContactEnquiryAdmin,
   submitFranchiseLead,
+  submitFranchiseBrochureLead,
   listFranchiseLeadsAdmin,
   updateFranchiseLeadAdmin
 } from '../controllers/enquiryController.js';
@@ -14,6 +15,7 @@ import {
   contactEnquirySchema,
   updateEnquiryStatusSchema,
   franchiseLeadSchema,
+  franchiseBrochureLeadSchema,
   updateFranchiseLeadStatusSchema
 } from '../validations/leadValidation.js';
 
@@ -21,6 +23,12 @@ const router = Router();
 
 router.post('/contact', publicSubmissionLimiter, validateRequest(contactEnquirySchema), submitContactEnquiry);
 router.post('/franchise-leads', publicSubmissionLimiter, validateRequest(franchiseLeadSchema), submitFranchiseLead);
+router.post(
+  '/franchise-leads/brochure',
+  publicSubmissionLimiter,
+  validateRequest(franchiseBrochureLeadSchema),
+  submitFranchiseBrochureLead
+);
 
 router.get(
   '/admin/contact',

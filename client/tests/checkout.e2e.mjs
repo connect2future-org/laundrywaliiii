@@ -75,7 +75,7 @@ export async function runCheckoutE2E({ headless = true } = {}) {
   await page.locator('input[placeholder="e.g. 570012"]').fill('570012');
 
   // Verify Confirmed Hub badge
-  const hubBadge = page.locator('text=Laundry Waliii – Mysore');
+  const hubBadge = page.locator('text=Laundry Waliiii – Mysore');
   assert.ok(await hubBadge.first().isVisible(), 'Mysore hub must be displayed');
   console.log('✓ Step 1 customer & address details verified');
 

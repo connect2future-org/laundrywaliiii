@@ -23,7 +23,16 @@ export const franchiseLeadSchema = Joi.object({
   city: Joi.string().trim().min(2).max(120).required(),
   investmentRange: Joi.string().trim().min(2).max(120).required(),
   experience: Joi.string().trim().max(500).allow('').optional(),
-  message: Joi.string().trim().max(2000).allow('').optional()
+  message: Joi.string().trim().max(2000).allow('').optional(),
+  source: Joi.string().trim().max(120).optional()
+});
+
+export const franchiseBrochureLeadSchema = Joi.object({
+  name: Joi.string().trim().min(2).max(120).required(),
+  phone: phoneRule.required(),
+  email: emailRule.allow('', null).optional(),
+  city: Joi.string().trim().max(120).allow('', null).optional(),
+  source: Joi.string().trim().max(120).default('Franchise Brochure Download').optional()
 });
 
 export const updateFranchiseLeadStatusSchema = Joi.object({

@@ -128,7 +128,7 @@ export const Header = () => {
         }
 
         /* --------------------------------------------------------
-           BRAND IDENTITY: MASCOT + SCRIPT "Laundry Wali"
+           BRAND IDENTITY: MASCOT + SCRIPT "Laundry Waliiii"
            -------------------------------------------------------- */
         .navbar-brand-link {
           justify-self: start;

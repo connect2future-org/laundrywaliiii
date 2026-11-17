@@ -94,7 +94,7 @@ test('Customer, Address, Branch, Order, Review, Inventory, and Expense enforce s
   const goodBranch = new Branch({
     branchCode: 'LW-MYS-01',
     slug: 'mysore',
-    name: 'Laundry Waliii – Mysore',
+    name: 'Laundry Waliiii – Mysore',
     area: 'KD Road',
     city: 'Mysore',
     state: 'Karnataka',

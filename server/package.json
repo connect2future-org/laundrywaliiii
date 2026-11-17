@@ -1,7 +1,7 @@
 {
   "name": "laundrywalii-api",
   "version": "1.0.0",
-  "description": "Independent backend API server for Laundry Walii using Node.js, Express, ESM, and Mongoose (LaundryWalii database)",
+  "description": "Independent backend API server for Laundry Waliiii using Node.js, Express, ESM, and Mongoose (LaundryWalii database)",
   "type": "module",
   "main": "src/server.js",
   "scripts": {

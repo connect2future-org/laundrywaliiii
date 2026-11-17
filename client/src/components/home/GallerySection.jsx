@@ -115,7 +115,7 @@ export const GallerySection = () => {
                   >
                     <Icon size={42} color={item.accentColor} style={{ opacity: 0.85 }} />
                     <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-muted)' }}>
-                      Laundry Walii Studio Standard
+                      Laundry Waliiii Studio Standard
                     </span>
 
                     {/* Subtle aesthetic watermarked background */}

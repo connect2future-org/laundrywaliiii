@@ -98,7 +98,7 @@ export const validateRuntimeEnv = () => {
 
   if (isPlaceholderValue(cfg.mongoUri)) {
     throw new Error(
-      'Missing or placeholder MONGO_URI. Set the Laundry Walii MongoDB Atlas connection string in server/.env.'
+      'Missing or placeholder MONGO_URI. Set the Laundry Waliiii MongoDB Atlas connection string in server/.env.'
     );
   }
 

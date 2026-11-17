@@ -34,7 +34,7 @@ export function App() {
     <CartProvider>
       <BrowserRouter>
         <ScrollToTop />
-        <Suspense fallback={<LoadingSpinner text="Loading Laundry Waliii..." />}>
+        <Suspense fallback={<LoadingSpinner text="Loading Laundry Waliiii..." />}>
           <Routes>
             <Route element={<SiteLayout />}>
               {/* 1. Home */}

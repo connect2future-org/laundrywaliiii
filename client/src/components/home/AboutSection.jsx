@@ -47,7 +47,7 @@ export const AboutSection = () => {
             >
               <img
                 src="/images/royal/about-mascot.jpg"
-                alt="Laundry Waliii Fabric Care"
+                alt="Laundry Waliiii Fabric Care"
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -60,7 +60,7 @@ export const AboutSection = () => {
 
           {/* Right Column: Editorial Text & Verified Service Benefits */}
           <div>
-            <span className="heading-sub">About Laundry Waliii</span>
+            <span className="heading-sub">About Laundry Waliiii</span>
 
             <h2
               className="heading-section"
@@ -85,7 +85,7 @@ export const AboutSection = () => {
                 marginBottom: '2.5rem'
               }}
             >
-              Laundry Waliii brings professional, hygienic and fabric-friendly laundry care to Mysore. We treat every garment with the care it deserves, so you always look and feel your best.
+              Laundry Waliiii brings professional, hygienic and fabric-friendly laundry care to Mysore. We treat every garment with the care it deserves, so you always look and feel your best.
             </p>
 
             {/* Editorial Benefits List (Concise Statements, No Heavy Cards) */}

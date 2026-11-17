@@ -9,7 +9,7 @@ export const HomePage = () => {
       {/* SECTION 1 — HERO / LANDING PAGE */}
       <Hero />
 
-      {/* SECTION 2 — WHY CHOOSE LAUNDRY WALIII */}
+      {/* SECTION 2 — WHY CHOOSE LAUNDRY WALIIII */}
       <WhyChooseUs />
 
       {/* SECTION 3 — CUSTOMER EXPERIENCES */}

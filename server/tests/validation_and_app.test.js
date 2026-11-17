@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import request from 'supertest';
 import { createApp } from '../src/app.js';
-import { franchiseLeadSchema, contactEnquirySchema } from '../src/validations/leadValidation.js';
+import { franchiseLeadSchema, franchiseBrochureLeadSchema, contactEnquirySchema } from '../src/validations/leadValidation.js';
 import { phoneRule } from '../src/validations/commonValidation.js';
 
 const app = createApp();
@@ -140,5 +140,32 @@ test('Backend phoneRule and lead validation schemas strictly enforce 10-digit ph
 
   const resContactInvalidPhone = contactEnquirySchema.validate({ ...baseContactPayload, phone: '12345' });
   assert.ok(resContactInvalidPhone.error, 'Contact enquiry with short phone should fail validation');
+
+  // 4. Franchise brochure lead schema: Name & 10-digit phone required, email & city optional
+  const validBrochureLead = franchiseBrochureLeadSchema.validate({
+    name: 'Suresh Kumar',
+    phone: '9876543210'
+  });
+  assert.equal(validBrochureLead.error, undefined, 'Brochure lead with only name & 10-digit phone should be valid');
+
+  const validBrochureLeadWithAll = franchiseBrochureLeadSchema.validate({
+    name: 'Suresh Kumar',
+    phone: '9876543210',
+    email: 'suresh@example.com',
+    city: 'Mysore'
+  });
+  assert.equal(validBrochureLeadWithAll.error, undefined, 'Brochure lead with email and city should be valid');
+
+  const invalidBrochurePhone = franchiseBrochureLeadSchema.validate({
+    name: 'Suresh Kumar',
+    phone: '123456789' // 9 digits
+  });
+  assert.ok(invalidBrochurePhone.error, 'Brochure lead with non-10-digit phone must fail');
+
+  const invalidBrochureEmptyName = franchiseBrochureLeadSchema.validate({
+    name: '   ',
+    phone: '9876543210'
+  });
+  assert.ok(invalidBrochureEmptyName.error, 'Brochure lead with whitespace name must fail');
 });
 

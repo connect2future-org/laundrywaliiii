@@ -6,7 +6,7 @@ const API_BASE_URL =
 export const ADMIN_TOKEN_STORAGE_KEY = 'laundry_walii_admin_token';
 
 /**
- * Centralized Axios instance configured for Laundry Walii Node.js/Express backend.
+ * Centralized Axios instance configured for Laundry Waliiii Node.js/Express backend.
  */
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -106,6 +106,9 @@ export const contactApi = {
 export const franchiseApi = {
   submitLead: async (leadData) => {
     return apiClient.post('/franchise-leads', leadData);
+  },
+  submitBrochureLead: async (leadData) => {
+    return apiClient.post('/franchise-leads/brochure', leadData);
   }
 };
 

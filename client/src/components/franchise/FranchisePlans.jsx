@@ -1,135 +1,276 @@
-import React from 'react';
-import { Store, Building, Sparkles, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import {
+  Store,
+  Building,
+  Sparkles,
+  Users,
+  Clock,
+  TrendingUp,
+  Maximize2,
+  ChevronDown,
+  ChevronUp,
+  Wrench,
+  Check
+} from 'lucide-react';
 
-export const FRANCHISE_PLANS_DATA = [
+export const FRANCHISE_MODELS = [
   {
     id: 'express-kiosk',
     name: 'Express Kiosk',
+    scaleSubtitle: 'Small Scale Franchise',
     badge: 'Fast Setup',
     icon: Store,
-    areaRequired: '180–250 sq. ft.',
     investment: '₹14 Lakhs',
-    estimatedRevenue: 'approx ₹2 Lakhs (after 6 months)',
-    revenueShare: '70:30',
-    estimatedRoi: '12 Months'
+    space: '180 sq. ft. – 250 sq. ft. (minimum)',
+    targetMarket: '3,50,000 Customers',
+    roi: '12 Months',
+    monthlyRevenue: '₹2 Lakhs approx (after 6 months)',
+    monthlyProfit: '₹1.2 Lakhs approx (after 3 months+)',
+    breakEven: '6 Months',
+    marketDemand: 'High ROI – Highly demanded model with significant return on investment',
+    manpower: [
+      '01 All Rounder',
+      '01 Delivery Boy',
+      '01 Executive'
+    ],
+    equipments: [
+      '10 kg Wet Cleaning: Imported – South Korea (LG Commercials)',
+      '1 Water Extractor (10 kg): Imported – South Korea (LG Commercials)',
+      '1 Dryer (10 kg): Imported – South Korea (LG Commercials)',
+      '1 Water Extractor (8.5 kg) for delicate clothes',
+      '8 Bottle Spotting kits – Imported from Germany',
+      '1 Boiler 9 kW capacity',
+      '1 Vacuum steam press table',
+      '1 Fully digital AI based touch system',
+      '5 Litre German based chemicals (1 month use)',
+      'Packing table & spotting table with materials (1 month use)'
+    ]
   },
   {
     id: 'standard-outlet',
     name: 'Standard Outlet',
+    scaleSubtitle: 'Medium Scale Franchise',
     badge: 'Most Popular',
     isPopular: true,
     icon: Store,
-    areaRequired: '180–250 sq. ft.',
     investment: '₹18 Lakhs',
-    estimatedRevenue: 'approx ₹3 Lakhs (after 6 months)',
-    revenueShare: '70:30',
-    estimatedRoi: '18 Months'
+    space: '180 sq. ft. – 250 sq. ft. (minimum)',
+    targetMarket: '5,00,000 Customers',
+    roi: '18 Months',
+    monthlyRevenue: '₹3 Lakhs approx (after 6 months)',
+    monthlyProfit: '₹1.6 Lakhs approx (after 3 months+)',
+    breakEven: '6 Months',
+    marketDemand: 'High ROI – Highly demanded model with significant return on investment',
+    manpower: [
+      '01 All Rounder',
+      '01 Presser',
+      '01 Delivery Boy',
+      '01 Executive'
+    ],
+    equipments: [
+      '15 kg Wet Cleaning: Imported – South Korea (LG Commercials)',
+      '2 Water Extractor (10 kg): Imported – South Korea (LG Commercials)',
+      '1 Dryer (15 kg): Imported – South Korea (LG Commercials)',
+      '1 RO + Mineral Water Plant',
+      '8 Bottle Spotting kits – Imported from Germany',
+      '1 Boiler 9 kW capacity',
+      '2 Vacuum steam press table',
+      '1 Fully digital AI based touch system',
+      '5 Litre German based chemicals (1 month use)',
+      'Packing table with materials (1 month use)'
+    ]
   },
   {
     id: 'premium-center',
     name: 'Premium Center',
+    scaleSubtitle: 'Big Scale Franchise',
     badge: 'High Capacity',
     icon: Building,
-    areaRequired: '180–250 sq. ft.',
     investment: '₹24 Lakhs',
-    estimatedRevenue: 'approx ₹4 Lakhs (after 6 months)',
-    revenueShare: '70:30',
-    estimatedRoi: '18 Months'
+    space: '180 sq. ft. – 250 sq. ft. (minimum)',
+    targetMarket: '15,00,000 Customers',
+    roi: '18 Months',
+    monthlyRevenue: '₹4 Lakhs approx (after 6 months)',
+    monthlyProfit: '₹2.3 Lakhs approx (after 3 months+)',
+    breakEven: '6 Months',
+    marketDemand: 'High ROI – Highly demanded model with significant return on investment',
+    manpower: [
+      '02 All Rounder',
+      '02 Press Man',
+      '02 Rider',
+      '01 Executive'
+    ],
+    equipments: [
+      '2 Wet Cleaning (15 kg): Imported – South Korea (LG Commercials)',
+      '1 Water Extractor (10 kg): Imported – South Korea (LG Commercials)',
+      '2 Dryer (10 kg): Imported – South Korea (LG Commercials)',
+      '1 RO + Mineral Water Plant',
+      '8 Bottle Spotting kits – Imported from Germany',
+      '1 Boiler 9 kW capacity',
+      '2 Vacuum steam press table',
+      '1 Fully digital AI based touch system',
+      '5 Litre German based chemicals (1 month use)',
+      'Packaging table with material (1 month use)'
+    ]
   }
 ];
 
-export const FranchisePlans = ({ onSelectPlan }) => {
+export const FranchisePlans = () => {
+  // Toggle for expanded equipment view
+  const [expandedEquipment, setExpandedEquipment] = useState({
+    'express-kiosk': true,
+    'standard-outlet': true,
+    'premium-center': true
+  });
+
+  const toggleEquipment = (id) => {
+    setExpandedEquipment((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
   return (
-    <section className="franchise-plans-section">
+    <section className="franchise-plans-section" id="franchise-models">
       <div className="container">
         {/* Section Header */}
         <div className="plans-header">
           <div className="section-label-wrapper">
             <span className="label-line" />
-            <span className="section-label-text">INVESTMENT OPTIONS</span>
+            <span className="section-label-text">BUSINESS ARCHITECTURES</span>
             <span className="label-line" />
           </div>
 
           <h2 className="plans-main-heading">
-            Franchise Investment <em>Plans</em>
+            Our Franchise <em>Models</em>
           </h2>
 
           <p className="plans-subheading">
-            Select the franchise model tailored to your investment budget, retail footprint, and territory scale.
+            Explore our three verified franchise structures tailored to your investment budget, retail footprint, and territory scale.
           </p>
         </div>
 
-        {/* 3 Investment Cards Grid */}
-        <div className="plans-cards-grid">
-          {FRANCHISE_PLANS_DATA.map((plan) => {
-            const Icon = plan.icon;
+        {/* 3-Column Grid on Desktop, Responsive on Tablet, Stacked on Mobile */}
+        <div className="plans-three-col-grid">
+          {FRANCHISE_MODELS.map((model) => {
+            const Icon = model.icon;
+            const isEquipOpen = !!expandedEquipment[model.id];
+
             return (
               <div
-                key={plan.id}
-                className={`plan-card ${plan.isPopular ? 'popular-plan' : ''}`}
+                key={model.id}
+                className={`franchise-model-card ${model.isPopular ? 'popular-model' : ''}`}
               >
-                {/* Popular Ribbon / Badge */}
-                {plan.badge && (
-                  <div className="plan-badge-pill">
-                    <Sparkles size={12} />
-                    <span>{plan.badge}</span>
+                {/* Popular Pill */}
+                {model.badge && (
+                  <div className="model-badge-wrap">
+                    <span className="model-badge-pill">
+                      <Sparkles size={12} />
+                      <span>{model.badge}</span>
+                    </span>
                   </div>
                 )}
 
-                {/* Plan Header */}
-                <div className="plan-card-header">
-                  <div className="plan-icon-bubble">
-                    <Icon size={24} />
+                {/* Card Header */}
+                <div className="model-card-header">
+                  <div className="model-icon-bubble">
+                    <Icon size={26} />
                   </div>
-                  <h3 className="plan-type-heading">{plan.name}</h3>
-                </div>
-
-                {/* 5 Information Fields in Exact Required Order */}
-                <div className="plan-specs-list">
-                  {/* Field 1: Area Required */}
-                  <div className="spec-row">
-                    <span className="spec-label">Area Required:</span>
-                    <strong className="spec-value">{plan.areaRequired}</strong>
-                  </div>
-
-                  {/* Field 2: Investment */}
-                  <div className="spec-row highlight-investment">
-                    <span className="spec-label">Investment:</span>
-                    <strong className="spec-value investment-value">{plan.investment}</strong>
-                  </div>
-
-                  {/* Field 3: Estimated Monthly Revenue */}
-                  <div className="spec-row">
-                    <span className="spec-label">Estimated Monthly Revenue:</span>
-                    <strong className="spec-value">{plan.estimatedRevenue}</strong>
-                  </div>
-
-                  {/* Field 4: Revenue Share */}
-                  <div className="spec-row">
-                    <span className="spec-label">Revenue Share:</span>
-                    <strong className="spec-value">{plan.revenueShare}</strong>
-                  </div>
-
-                  {/* Field 5: Estimated ROI */}
-                  <div className="spec-row">
-                    <span className="spec-label">Estimated ROI:</span>
-                    <strong className="spec-value">{plan.estimatedRoi}</strong>
+                  <div>
+                    <h3 className="model-name">{model.name}</h3>
+                    <span className="model-scale-tag">{model.scaleSubtitle}</span>
                   </div>
                 </div>
 
-                {/* Action CTA within Card */}
-                {onSelectPlan && (
-                  <div className="plan-card-action">
-                    <button
-                      type="button"
-                      onClick={() => onSelectPlan(plan)}
-                      className={`btn-select-plan ${plan.isPopular ? 'btn-popular' : ''}`}
-                    >
-                      <span>Choose {plan.name}</span>
-                      <ArrowRight size={15} />
-                    </button>
+                {/* Investment Highlight */}
+                <div className="model-investment-block">
+                  <span className="investment-label">TOTAL CAPITAL INVESTMENT</span>
+                  <div className="investment-amount">{model.investment}</div>
+                </div>
+
+                {/* Key Metrics Grid */}
+                <div className="model-metrics-grid">
+                  <div className="metric-cell">
+                    <div className="metric-header">
+                      <Maximize2 size={13} className="metric-icon" />
+                      <span>Space Required</span>
+                    </div>
+                    <strong>{model.space}</strong>
                   </div>
-                )}
+
+                  <div className="metric-cell">
+                    <div className="metric-header">
+                      <Clock size={13} className="metric-icon" />
+                      <span>Target ROI</span>
+                    </div>
+                    <strong>{model.roi} (Break Even: {model.breakEven})</strong>
+                  </div>
+
+                  <div className="metric-cell">
+                    <div className="metric-header">
+                      <TrendingUp size={13} className="metric-icon" />
+                      <span>Monthly Revenue</span>
+                    </div>
+                    <strong>{model.monthlyRevenue}</strong>
+                  </div>
+
+                  <div className="metric-cell">
+                    <div className="metric-header">
+                      <Sparkles size={13} className="metric-icon" />
+                      <span>Monthly Profit</span>
+                    </div>
+                    <strong>{model.monthlyProfit}</strong>
+                  </div>
+
+                  <div className="metric-cell">
+                    <div className="metric-header">
+                      <Users size={13} className="metric-icon" />
+                      <span>Target Market Reach</span>
+                    </div>
+                    <strong>{model.targetMarket}</strong>
+                  </div>
+
+                  <div className="metric-cell">
+                    <div className="metric-header">
+                      <Users size={13} className="metric-icon" />
+                      <span>Manpower Required</span>
+                    </div>
+                    <strong>{model.manpower.join(', ')}</strong>
+                  </div>
+                </div>
+
+                {/* Commercial Equipments & Setup Checklist */}
+                <div className="model-equipment-box">
+                  <button
+                    type="button"
+                    className="equipment-toggle-btn"
+                    onClick={() => toggleEquipment(model.id)}
+                    aria-expanded={isEquipOpen}
+                  >
+                    <span className="equip-btn-title">
+                      <Wrench size={14} />
+                      <span>Equipments & Commercial Setup ({model.equipments.length})</span>
+                    </span>
+                    {isEquipOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  </button>
+
+                  {isEquipOpen && (
+                    <ul className="equipment-items-list">
+                      {model.equipments.map((equip, i) => (
+                        <li key={i} className="equipment-item">
+                          <Check size={13} className="equip-check-icon" />
+                          <span>{equip}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                {/* Market Demand Banner */}
+                <div className="model-demand-banner">
+                  <span className="demand-badge">Market Demand</span>
+                  <span className="demand-text">{model.marketDemand}</span>
+                </div>
               </div>
             );
           })}
@@ -138,7 +279,7 @@ export const FranchisePlans = ({ onSelectPlan }) => {
 
       <style>{`
         .franchise-plans-section {
-          padding: 5rem 0;
+          padding: 5rem 0 5.5rem;
           background: #FAF7FC;
           position: relative;
           z-index: 2;
@@ -146,7 +287,7 @@ export const FranchisePlans = ({ onSelectPlan }) => {
 
         .plans-header {
           text-align: center;
-          max-width: 720px;
+          max-width: 760px;
           margin: 0 auto 3.5rem;
         }
 
@@ -154,222 +295,307 @@ export const FranchisePlans = ({ onSelectPlan }) => {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 0.75rem;
+          gap: 0.85rem;
           margin-bottom: 0.85rem;
         }
 
         .label-line {
-          width: 24px;
-          height: 2px;
-          background-color: #700F63;
+          width: 36px;
+          height: 1.5px;
+          background-color: rgba(112, 15, 99, 0.38);
+          border-radius: 2px;
         }
 
         .section-label-text {
           font-family: var(--font-body);
-          font-size: 0.8rem;
+          font-size: 0.78rem;
           font-weight: 700;
           text-transform: uppercase;
-          letter-spacing: 0.12em;
-          color: #171421;
+          letter-spacing: 0.16em;
+          color: #700F63;
         }
 
         .plans-main-heading {
-          font-family: var(--font-heading);
+          font-family: 'Playfair Display', Georgia, serif;
           font-style: italic;
-          font-size: clamp(2rem, 3.8vw, 2.75rem);
+          font-size: clamp(2.2rem, 3.8vw, 3rem);
           font-weight: 700;
-          color: #171421;
+          color: #1A1320;
           line-height: 1.2;
-          margin-bottom: 0.75rem;
+          margin: 0 0 0.85rem;
+          letter-spacing: -0.015em;
         }
 
         .plans-main-heading em {
-          font-family: var(--font-serif);
-          font-style: italic;
-          font-weight: 700;
           color: #700F63;
         }
 
         .plans-subheading {
           font-family: var(--font-body);
           font-size: 1.02rem;
-          color: #45414D;
+          color: #5C5564;
           line-height: 1.65;
-          margin: 0 auto;
+          margin: 0;
         }
 
-        .plans-cards-grid {
+        /* 3-Column Grid */
+        .plans-three-col-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 2rem;
+          gap: 1.75rem;
           align-items: stretch;
         }
 
-        .plan-card {
+        .franchise-model-card {
           background: #FFFFFF;
-          border: 1px solid rgba(220, 204, 226, 0.75);
-          border-radius: 28px;
-          padding: 2.5rem 2rem;
-          box-shadow: 0 6px 24px rgba(70, 18, 75, 0.04);
+          border-radius: 20px;
+          border: 1px solid rgba(220, 204, 226, 0.7);
+          box-shadow: 0 8px 30px rgba(45, 15, 55, 0.04);
+          padding: 2.25rem 1.75rem 2rem;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
           position: relative;
-          transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .plan-card:hover {
+        .franchise-model-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 12px 32px rgba(70, 18, 75, 0.09);
-          border-color: rgba(112, 15, 99, 0.35);
+          box-shadow: 0 16px 40px rgba(112, 15, 99, 0.1);
+          border-color: rgba(112, 15, 99, 0.25);
         }
 
-        .plan-card.popular-plan {
-          border-color: #700F63;
-          box-shadow: 0 10px 32px rgba(112, 15, 99, 0.12);
+        .franchise-model-card.popular-model {
+          border: 2px solid #700F63;
+          box-shadow: 0 12px 36px rgba(112, 15, 99, 0.12);
         }
 
-        .plan-badge-pill {
+        .model-badge-wrap {
           position: absolute;
-          top: -12px;
-          right: 24px;
+          top: -14px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .model-badge-pill {
           display: inline-flex;
           align-items: center;
-          gap: 5px;
+          gap: 0.35rem;
           background: #700F63;
           color: #FFFFFF;
           font-family: var(--font-body);
-          font-size: 0.74rem;
+          font-size: 0.72rem;
           font-weight: 700;
-          text-transform: uppercase;
           letter-spacing: 0.06em;
-          padding: 5px 14px;
+          text-transform: uppercase;
+          padding: 0.3rem 0.95rem;
           border-radius: 9999px;
-          box-shadow: 0 4px 12px rgba(112, 15, 99, 0.26);
+          box-shadow: 0 4px 12px rgba(112, 15, 99, 0.28);
         }
 
-        .plan-card-header {
-          text-align: center;
-          margin-bottom: 2rem;
-          padding-bottom: 1.5rem;
-          border-bottom: 1px solid rgba(220, 204, 226, 0.55);
+        .model-card-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          padding-bottom: 1.25rem;
+          border-bottom: 1px solid rgba(220, 204, 226, 0.5);
         }
 
-        .plan-icon-bubble {
-          width: 58px;
-          height: 58px;
-          border-radius: 50%;
-          background: #F6EEF8;
+        .model-icon-bubble {
+          width: 52px;
+          height: 52px;
+          border-radius: 14px;
+          background: #FAF2FB;
           color: #700F63;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 0 auto 1.15rem;
+          flex-shrink: 0;
+          border: 1px solid rgba(112, 15, 99, 0.12);
         }
 
-        .plan-type-heading {
-          font-family: var(--font-heading);
-          font-size: 1.6rem;
+        .model-name {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.45rem;
           font-weight: 700;
-          color: #171421;
-          margin: 0;
-          letter-spacing: -0.01em;
+          color: #1A1320;
+          margin: 0 0 0.2rem 0;
+          line-height: 1.2;
         }
 
-        .plan-specs-list {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          flex: 1;
-          margin-bottom: 2rem;
+        .model-scale-tag {
+          font-family: var(--font-body);
+          font-size: 0.78rem;
+          font-weight: 600;
+          color: #700F63;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
         }
 
-        .spec-row {
+        /* Investment Block */
+        .model-investment-block {
+          background: linear-gradient(135deg, #FAF4FC 0%, #F5EAF8 100%);
+          border-radius: 12px;
+          padding: 1.15rem 1.25rem;
+          text-align: center;
+          margin-bottom: 1.5rem;
+          border: 1px solid rgba(112, 15, 99, 0.12);
+        }
+
+        .investment-label {
+          display: block;
+          font-family: var(--font-body);
+          font-size: 0.7rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          color: #5C5564;
+          margin-bottom: 0.35rem;
+        }
+
+        .investment-amount {
+          font-family: var(--font-heading);
+          font-size: 2rem;
+          font-weight: 800;
+          color: #700F63;
+          line-height: 1;
+        }
+
+        /* Key Metrics Grid */
+        .model-metrics-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .metric-cell {
+          background: #FAFAFC;
+          border-radius: 10px;
+          padding: 0.75rem 0.95rem;
+          border: 1px solid #ECE7EF;
           display: flex;
           flex-direction: column;
           gap: 0.25rem;
-          padding: 0.75rem 1rem;
-          background: #FCFAFC;
-          border-radius: 14px;
-          border: 1px solid rgba(220, 204, 226, 0.5);
         }
 
-        .spec-row.highlight-investment {
-          background: #F8F2F9;
-          border-color: rgba(112, 15, 99, 0.22);
-        }
-
-        .spec-label {
+        .metric-header {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
           font-family: var(--font-body);
-          font-size: 0.8rem;
-          color: #77717D;
-          text-transform: uppercase;
-          letter-spacing: 0.04em;
+          font-size: 0.75rem;
+          color: #756D7E;
+          font-weight: 500;
+        }
+
+        .metric-icon {
+          color: #700F63;
+        }
+
+        .metric-cell strong {
+          font-family: var(--font-body);
+          font-size: 0.88rem;
+          color: #1A1320;
           font-weight: 600;
+          line-height: 1.35;
         }
 
-        .spec-value {
+        /* Equipment Box */
+        .model-equipment-box {
+          margin-top: auto;
+          background: #FAF7FC;
+          border-radius: 12px;
+          border: 1px solid rgba(220, 204, 226, 0.6);
+          overflow: hidden;
+          margin-bottom: 1.25rem;
+        }
+
+        .equipment-toggle-btn {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.75rem 0.95rem;
+          background: transparent;
+          border: none;
+          cursor: pointer;
           font-family: var(--font-body);
-          font-size: 0.98rem;
-          color: #171421;
-          font-weight: 700;
+          color: #38004D;
+          font-weight: 600;
+          font-size: 0.8rem;
+          transition: background 0.2s ease;
+        }
+
+        .equipment-toggle-btn:hover {
+          background: #F4EAF6;
+        }
+
+        .equip-btn-title {
+          display: flex;
+          align-items: center;
+          gap: 0.45rem;
+          color: #700F63;
+        }
+
+        .equipment-items-list {
+          list-style: none;
+          padding: 0.4rem 0.85rem 0.85rem;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          max-height: 240px;
+          overflow-y: auto;
+        }
+
+        .equipment-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.5rem;
+          font-family: var(--font-body);
+          font-size: 0.76rem;
+          color: #4A4252;
           line-height: 1.4;
         }
 
-        .investment-value {
-          font-family: var(--font-heading);
-          font-size: 1.35rem;
+        .equip-check-icon {
           color: #700F63;
-          font-weight: 700;
+          flex-shrink: 0;
+          margin-top: 2px;
         }
 
-        .plan-card-action {
-          margin-top: auto;
+        /* Demand Banner */
+        .model-demand-banner {
+          background: #FDF3FB;
+          border-radius: 8px;
+          padding: 0.65rem 0.85rem;
+          border: 1px solid rgba(112, 15, 99, 0.12);
+          display: flex;
+          flex-direction: column;
+          gap: 0.2rem;
         }
 
-        .btn-select-plan {
-          width: 100%;
-          padding: 0.85rem 1.25rem;
+        .demand-badge {
           font-family: var(--font-body);
-          font-size: 0.92rem;
-          font-weight: 600;
-          background: #FFFFFF;
-          color: #171421;
-          border: 1px solid rgba(220, 204, 226, 0.75);
-          border-radius: 9999px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          cursor: pointer;
-          transition: all 0.2s ease;
-        }
-
-        .btn-select-plan:hover {
-          border-color: #700F63;
+          font-size: 0.68rem;
+          font-weight: 700;
+          text-transform: uppercase;
           color: #700F63;
-          background: #F8F2F9;
-          transform: translateY(-2px);
+          letter-spacing: 0.05em;
         }
 
-        .btn-popular {
-          background: #700F63;
-          color: #FFFFFF;
-          border-color: #700F63;
-          box-shadow: 0 4px 14px rgba(112, 15, 99, 0.22);
+        .demand-text {
+          font-family: var(--font-body);
+          font-size: 0.78rem;
+          color: #4A3A4E;
+          line-height: 1.35;
         }
 
-        .btn-popular:hover {
-          background: #590A4E;
-          color: #FFFFFF;
-          border-color: #590A4E;
-          box-shadow: 0 6px 18px rgba(112, 15, 99, 0.3);
-        }
-
-        @media (max-width: 1024px) {
-          .plans-cards-grid {
+        /* Responsive Breakpoints */
+        @media (max-width: 1080px) {
+          .plans-three-col-grid {
             grid-template-columns: 1fr;
-            max-width: 580px;
+            max-width: 680px;
             margin: 0 auto;
           }
         }
@@ -379,4 +605,3 @@ export const FranchisePlans = ({ onSelectPlan }) => {
 };
 
 export default FranchisePlans;
-

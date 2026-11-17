@@ -39,7 +39,7 @@ export const CheckoutTransitionOverlay = ({ isVisible, statusText = 'Processing 
       >
         <img
           src={BRAND_CONFIG.logo}
-          alt="Laundry Walii"
+          alt="Laundry Waliiii"
           style={{ width: '48px', height: '48px', borderRadius: '50%' }}
         />
         <div

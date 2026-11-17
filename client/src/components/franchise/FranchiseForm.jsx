@@ -116,7 +116,7 @@ _Submitted via Laundry Waliiii Franchise Portal_`.trim();
   };
 
   const generalFranchiseWhatsAppUrl = `https://wa.me/91${BRAND_CONFIG.contact.phone}?text=${encodeURIComponent(
-    'Hello Laundry Walii Team, I am interested in exploring franchise partnership opportunities for Laundry Waliiii.'
+    'Hello Laundry Waliiii Team, I am interested in exploring franchise partnership opportunities for Laundry Waliiii.'
   )}`;
 
   if (isSuccess && leadDetails) {
@@ -234,7 +234,7 @@ _Submitted via Laundry Waliiii Franchise Portal_`.trim();
         </div>
         <h3 className="form-heading">Enquire About Franchise</h3>
         <p className="form-subheading">
-          Fill out the details below. The Laundry Walii Team will review your territory preference and reach out to schedule an introductory consultation.
+          Fill out the details below. The Laundry Waliiii Team will review your territory preference and reach out to schedule an introductory consultation.
         </p>
       </div>
 

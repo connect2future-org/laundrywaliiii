@@ -6,7 +6,7 @@ const BROCHURE_CHAPTERS = [
   {
     number: '01',
     title: 'Executive Summary & Mysore Heritage Brand',
-    desc: 'The evolution of Laundry Waliii into Mysore’s premier fabric care destination, combining modern aesthetic care with everyday reliability.'
+    desc: 'The evolution of Laundry Waliiii into Mysore’s premier fabric care destination, combining modern aesthetic care with everyday reliability.'
   },
   {
     number: '02',
@@ -88,7 +88,7 @@ export const FranchiseBrochurePage = () => {
               <div className="cover-brand-header">
                 <img
                   src="/images/laundry-walii-official-logo-transparent.png"
-                  alt="Laundry Waliii"
+                  alt="Laundry Waliiii"
                   className="cover-logo-img"
                 />
               </div>
@@ -121,7 +121,7 @@ export const FranchiseBrochurePage = () => {
               </h2>
 
               <p className="dossier-desc">
-                The Laundry Walii Franchise Prospectus outlines our operational standards, equipment configurations, and territory licensing framework. Formal dossiers are shared directly with verified applicants.
+                The Laundry Waliiii Franchise Prospectus outlines our operational standards, equipment configurations, and territory licensing framework. Formal dossiers are shared directly with verified applicants.
               </p>
 
               <div className="dossier-highlights-grid">

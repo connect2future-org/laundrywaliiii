@@ -97,7 +97,7 @@ export const BranchesPreview = () => {
             >
               <img
                 src="/images/royal/branch-gate.jpg"
-                alt="Laundry Waliii Mysore Location"
+                alt="Laundry Waliiii Mysore Location"
                 style={{
                   width: '100%',
                   height: '100%',

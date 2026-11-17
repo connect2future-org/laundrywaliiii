@@ -35,13 +35,20 @@ const franchiseLeadSchema = new mongoose.Schema(
     },
     city: {
       type: String,
-      required: true,
-      trim: true
+      required: false,
+      trim: true,
+      default: ''
     },
     investmentRange: {
       type: String,
-      required: true,
-      trim: true
+      required: false,
+      trim: true,
+      default: 'Not Specified'
+    },
+    source: {
+      type: String,
+      trim: true,
+      default: 'Franchise Portal'
     },
     experience: {
       type: String,

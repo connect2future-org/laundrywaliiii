@@ -278,7 +278,7 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
     const pin = address.pincode ? ` - ${address.pincode.trim()}` : '';
     const dateText = `${activeDateObj.displayDay}, ${activeDateObj.displayDate}`;
     const slotText = activeSlotObj?.label || '';
-    const branchName = selectedBranch.name || 'Laundry Waliii – Mysore';
+    const branchName = selectedBranch.name || 'Laundry Waliiii – Mysore';
     const totalAmount = formatINR(orderData?.order?.totalAmount ?? confirmedOrder?.order?.totalAmount ?? total);
     const notes = instructions.trim() ? `\n📝 *Notes:* ${instructions.trim()}` : '';
 
@@ -746,7 +746,7 @@ Thank you for choosing Laundry Waliiii!`.trim();
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                         <span style={{ fontWeight: 700, fontSize: '0.88rem', color: '#39004F' }}>
-                          {selectedBranch.name || 'Laundry Waliii – Mysore'}
+                          {selectedBranch.name || 'Laundry Waliiii – Mysore'}
                         </span>
                         <span
                           style={{
@@ -1200,7 +1200,7 @@ Thank you for choosing Laundry Waliiii!`.trim();
                   <div><strong>Customer:</strong> {customer.name} ({customer.phone})</div>
                   <div><strong>Pickup Address:</strong> {address.addressLine}{address.landmark ? ` (Landmark: ${address.landmark})` : ''}</div>
                   <div><strong>Pickup Schedule:</strong> {activeDateObj.displayDay}, {activeDateObj.displayDate} · {activeSlotObj?.label}</div>
-                  <div><strong>Assigned Outlet:</strong> {selectedBranch.name || 'Laundry Waliii – Mysore'}</div>
+                  <div><strong>Assigned Outlet:</strong> {selectedBranch.name || 'Laundry Waliiii – Mysore'}</div>
                   <div><strong>Payment Method:</strong> Cash on Delivery (COD)</div>
                   <div><strong>Payment Status:</strong> <span style={{ color: '#D97706', fontWeight: 700 }}>Pending (Pay upon delivery)</span></div>
                   {confirmedOrder.order?.totalAmount !== undefined && (

@@ -154,7 +154,7 @@ export const dispatchFranchiseNotifications = async (lead) => {
   await safeLogNotification({
     eventType: 'franchise_lead',
     referenceId: leadId,
-    payloadSummary: `Franchise lead ${leadId} from ${lead?.name} in ${lead?.city} (Free WhatsApp click-to-chat ready)`,
+    payloadSummary: `Franchise lead ${leadId} from ${lead?.name} in ${lead?.city || 'Unspecified'} (Free WhatsApp click-to-chat ready)`,
     channel: 'whatsapp',
     recipient: '919035999272',
     status: 'customer_initiated',
@@ -171,7 +171,7 @@ export const dispatchFranchiseNotifications = async (lead) => {
   });
 
   // 3. SMS Alert
-  const smsText = `Laundry Waliiii: New franchise lead ${leadId} from ${lead?.name} (${lead?.phone}) for ${lead?.city}.`;
+  const smsText = `Laundry Waliiii: New franchise lead ${leadId} from ${lead?.name} (${lead?.phone}) for ${lead?.city || 'Unspecified'}.`;
   const smsResult = await sendSmsNotification({
     eventType: 'franchise_lead',
     referenceId: leadId,

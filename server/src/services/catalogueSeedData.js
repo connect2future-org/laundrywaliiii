@@ -1,5 +1,5 @@
 /**
- * Official Laundry Walii Service Catalogue Seed Data
+ * Official Laundry Waliiii Service Catalogue Seed Data
  * Single source of truth for idempotent MongoDB seeding (`LaundryWalii.services`).
  * Prices are strictly in INR as specified in the verified catalogue.
  */

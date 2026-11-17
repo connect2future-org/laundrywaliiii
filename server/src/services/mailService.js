@@ -55,7 +55,7 @@ export const sendContactEnquiryNotification = async (enquiry, options = {}) => {
   const messageBody = enquiry?.message || '';
 
   const text = [
-    'New Customer Enquiry — Laundry Walii',
+    'New Customer Enquiry — Laundry Waliiii',
     '',
     `Name: ${customerName}`,
     `Phone: ${customerPhone}`,
@@ -69,7 +69,7 @@ export const sendContactEnquiryNotification = async (enquiry, options = {}) => {
 
   const html = `
     <div style="font-family: Arial, sans-serif; color: #1F1B24; max-width: 600px;">
-      <h2 style="color: #850078; margin-bottom: 12px;">New Customer Enquiry — Laundry Walii</h2>
+      <h2 style="color: #850078; margin-bottom: 12px;">New Customer Enquiry — Laundry Waliiii</h2>
       <table style="border-collapse: collapse; width: 100%; margin-bottom: 16px;">
         <tr><td style="padding: 6px 0; font-weight: bold;">Name:</td><td>${escapeHtml(customerName)}</td></tr>
         <tr><td style="padding: 6px 0; font-weight: bold;">Phone:</td><td>${escapeHtml(customerPhone)}</td></tr>
@@ -93,7 +93,7 @@ export const sendContactEnquiryNotification = async (enquiry, options = {}) => {
       from: cfg.smtp.from || cfg.smtp.user,
       to: recipient,
       replyTo: enquiry?.email || undefined,
-      subject: `[Laundry Walii Enquiry] ${enquiryType} — ${customerName}`,
+      subject: `[Laundry Waliiii Enquiry] ${enquiryType} — ${customerName}`,
       text,
       html
     });
@@ -171,7 +171,7 @@ export const sendOrderNotification = async ({ order, items = [], tracking }, opt
     const info = await transporter.sendMail({
       from: cfg.smtp.from || cfg.smtp.user,
       to: businessRecipient,
-      subject: `[Laundry Walii Order] New Order #${bookingId} — ${customerName}`,
+      subject: `[Laundry Waliiii Order] New Order #${bookingId} — ${customerName}`,
       text
     });
 
@@ -221,8 +221,8 @@ export const sendFranchiseLeadNotification = async (lead, options = {}) => {
     const info = await transporter.sendMail({
       from: cfg.smtp.from || cfg.smtp.user,
       to: businessRecipient,
-      subject: `[Franchise Application] ${lead.name} — ${lead.city}`,
-      text: `New Franchise Lead\n\nName: ${lead.name}\nPhone: ${lead.phone}\nEmail: ${lead.email || 'Not provided'}\nCity: ${lead.city}\nInvestment: ${lead.investmentRange}\nMessage: ${lead.message || 'None'}`
+      subject: `[Franchise Application] ${lead.name} — ${lead.city || 'Direct Inquiry'}`,
+      text: `New Franchise Lead\n\nName: ${lead.name}\nPhone: ${lead.phone}\nEmail: ${lead.email || 'Not provided'}\nCity: ${lead.city || 'Not specified'}\nInvestment: ${lead.investmentRange || 'Brochure Lead'}\nSource: ${lead.source || 'Franchise Portal'}\nMessage: ${lead.message || 'None'}`
     });
 
     return {

@@ -1,7 +1,7 @@
 export const BRANCHES_DATA = [
   {
     id: 'mysore',
-    name: 'Laundry Waliii – Mysore',
+    name: 'Laundry Waliiii – Mysore',
     area: 'KD Road',
     city: 'Mysore',
     state: 'Karnataka',
@@ -31,7 +31,7 @@ export const BRANCHES_DATA = [
       'Card & UPI Payment',
       '[Amenities – Editable Placeholder]'
     ],
-    heroImageText: 'Laundry Waliii – Mysore'
+    heroImageText: 'Laundry Waliiii – Mysore'
   }
 ];
 

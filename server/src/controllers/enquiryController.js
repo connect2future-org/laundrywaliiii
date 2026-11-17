@@ -27,7 +27,7 @@ export const submitContactEnquiry = asyncHandler(async (req, res) => {
 
   res.status(201).json({
     success: true,
-    message: `Thank you, ${enquiry.name}! Your inquiry has been submitted successfully. Our Laundry Walii team will review it and get in touch with you.`,
+    message: `Thank you, ${enquiry.name}! Your inquiry has been submitted successfully. Our Laundry Waliiii team will review it and get in touch with you.`,
     enquiryId: enquiry._id,
     notifications,
     enquiry: {
@@ -91,6 +91,36 @@ export const submitFranchiseLead = asyncHandler(async (req, res) => {
     leadId: lead.leadRef,
     notifications,
     message: 'Your franchise interest application has been received. Our expansion lead will contact you within 24–48 hours.'
+  });
+});
+
+export const submitFranchiseBrochureLead = asyncHandler(async (req, res) => {
+  const leadRef = generateRefCode('FBL');
+  const lead = await FranchiseLead.create({
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email || '',
+    city: req.body.city || '',
+    investmentRange: 'Brochure Download',
+    source: req.body.source || 'Franchise Brochure Download',
+    message: 'Requested Franchise PDF Brochure Download',
+    leadRef
+  });
+
+  // Multi-channel notification dispatch (never fails lead persistence)
+  let notifications = null;
+  try {
+    notifications = await dispatchFranchiseNotifications(lead);
+  } catch (notifErr) {
+    console.warn(`[enquiryController] Non-fatal franchise brochure notification error: ${notifErr?.message || 'unknown'}`);
+  }
+
+  res.status(201).json({
+    success: true,
+    leadId: lead.leadRef,
+    brochureUrl: '/docs/laundry-waliiii-franchise-brochure.pdf',
+    notifications,
+    message: 'Thank you for your interest in Laundry Waliiii. Your franchise brochure download has started.'
   });
 });
 

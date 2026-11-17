@@ -9,7 +9,7 @@ export const HOW_IT_WORKS = [
   {
     step: '02',
     title: 'Doorstep Pickup',
-    description: 'Our Laundry Walii pickup executive collects your garments in secure laundry bags directly from your home or office in Mysore.',
+    description: 'Our Laundry Waliiii pickup executive collects your garments in secure laundry bags directly from your home or office in Mysore.',
     icon: 'Truck',
     badge: 'Safe Collection'
   },
@@ -76,7 +76,7 @@ export const TESTIMONIALS = [
     rating: 5,
     comment: '[Sample Customer Review – Editable Placeholder: "Delicate sarees and ethnic wear returned in spotless condition with crisp finish."]',
     service: 'Artisan Dry Cleaning',
-    branch: 'Laundry Waliii – Mysore'
+    branch: 'Laundry Waliiii – Mysore'
   },
   {
     id: 2,
@@ -85,7 +85,7 @@ export const TESTIMONIALS = [
     rating: 5,
     comment: '[Sample Customer Review – Editable Placeholder: "Convenient doorstep pickup and uniform folding for weekly family laundry."]',
     service: 'Everyday Wash & Fold',
-    branch: 'Laundry Waliii – Mysore'
+    branch: 'Laundry Waliiii – Mysore'
   },
   {
     id: 3,
@@ -94,7 +94,7 @@ export const TESTIMONIALS = [
     rating: 5,
     comment: '[Sample Customer Review – Editable Placeholder: "Revived my sports sneakers with deep ultrasonic sole cleaning and deodorization."]',
     service: 'Sneaker & Shoe Spa',
-    branch: 'Laundry Waliii – Mysore'
+    branch: 'Laundry Waliiii – Mysore'
   },
   {
     id: 4,
@@ -103,7 +103,7 @@ export const TESTIMONIALS = [
     rating: 5,
     comment: '[Sample Customer Review – Editable Placeholder: "Vacuum steam pressing finish gives crisp collars with zero shine marks."]',
     service: 'Express Steam Pressing',
-    branch: 'Laundry Waliii – Mysore'
+    branch: 'Laundry Waliiii – Mysore'
   }
 ];
 
@@ -134,7 +134,7 @@ export const FRANCHISE_MODELS = [
     expectedMargin: '[42% – 48% – Editable Placeholder]',
     isPopular: true,
     includes: [
-      'Store fitout in Laundry Walii signature brand palette',
+      'Store fitout in Laundry Waliiii signature brand palette',
       'Italian vacuum steam ironing tables & boilers',
       'Footwear intake and preliminary care station',
       'Staff onboarding and operations SOP training',
@@ -197,7 +197,7 @@ export const FRANCHISE_BENEFITS = [
 export const FRANCHISE_FAQS = [
   {
     question: 'Do I need prior experience in the laundry or dry cleaning industry?',
-    answer: 'No prior experience is necessary. Laundry Walii provides standard operating guidelines covering machine handling, garment inspection, and counter operations.'
+    answer: 'No prior experience is necessary. Laundry Waliiii provides standard operating guidelines covering machine handling, garment inspection, and counter operations.'
   },
   {
     question: 'How long does it take from agreement to store opening?',
@@ -208,7 +208,7 @@ export const FRANCHISE_FAQS = [
     answer: '[Editable Placeholder: Operating royalty and software maintenance fees are structured transparently in the partner agreement.]'
   },
   {
-    question: 'Does Laundry Walii assist with site selection?',
+    question: 'Does Laundry Waliiii assist with site selection?',
     answer: 'Yes, our team reviews proposed locations for footfall, visibility, power/water supply, and customer access before finalizing.'
   },
   {

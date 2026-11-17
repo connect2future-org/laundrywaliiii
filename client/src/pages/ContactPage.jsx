@@ -22,12 +22,12 @@ const WhatsAppIcon = ({ size = 18, color = 'currentColor' }) => (
 
 export const ContactPage = () => {
   const whatsappUrl = `${BRAND_CONFIG.contact.whatsappBaseUrl}?text=${encodeURIComponent(
-    'Hello Laundry Walii, I would like to know more about your laundry services.'
+    'Hello Laundry Waliiii, I would like to know more about your laundry services.'
   )}`;
   const whatsappCallFallbackUrl = BRAND_CONFIG.contact.whatsappBaseUrl;
   const hasConfiguredEmail = Boolean(BRAND_CONFIG.contact.email && BRAND_CONFIG.contact.email.includes('@'));
   const mailtoUrl = hasConfiguredEmail
-    ? `mailto:${BRAND_CONFIG.contact.email}?subject=${encodeURIComponent('Laundry Walii Customer Inquiry')}`
+    ? `mailto:${BRAND_CONFIG.contact.email}?subject=${encodeURIComponent('Laundry Waliiii Customer Inquiry')}`
     : '';
 
   return (
@@ -200,7 +200,7 @@ export const ContactPage = () => {
                   <div className="card-content-block">
                     <span className="card-tag">Our Location</span>
                     <h3 className="card-title-studio">
-                      Laundry Waliii – Mysore
+                      Laundry Waliiii – Mysore
                     </h3>
                     <p className="card-description studio-address-text">
                       #5 Dr Dejagav Circle, near Westside, Kuvempu Trust Building, KD Road, Mysore – 570012
@@ -252,7 +252,7 @@ export const ContactPage = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-card-action btn-magenta"
-                      aria-label="Open Laundry Waliii Instagram profile in new tab"
+                      aria-label="Open Laundry Waliiii Instagram profile in new tab"
                     >
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                         <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>

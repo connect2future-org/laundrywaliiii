@@ -148,7 +148,7 @@ export const MobileNav = ({ isOpen, onClose, navLinks }) => {
               href={BRAND_CONFIG.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Follow Laundry Waliii on Instagram"
+              aria-label="Follow Laundry Waliiii on Instagram"
               style={{
                 width: '38px',
                 height: '38px',
@@ -172,7 +172,7 @@ export const MobileNav = ({ isOpen, onClose, navLinks }) => {
               href={BRAND_CONFIG.contact.whatsappBaseUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Chat with Laundry Walii on WhatsApp"
+              aria-label="Chat with Laundry Waliiii on WhatsApp"
               style={{
                 width: '38px',
                 height: '38px',

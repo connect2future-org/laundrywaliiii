@@ -85,7 +85,7 @@ export const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section className="sakura-why-section" id="why-choose-us" aria-label="Why Choose Laundry Waliii">
+    <section className="sakura-why-section" id="why-choose-us" aria-label="Why Choose Laundry Waliiii">
       {/* Main Center Content Container */}
       <div className="why-content-container">
         {/* Section Header */}

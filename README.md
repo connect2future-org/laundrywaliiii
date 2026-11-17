@@ -1,4 +1,4 @@
-# Laundry Walii — Frontend Application
+# Laundry Waliiii — Frontend Application
 
 > **Fresh Clothes. Happy People.**  
 > Bengaluru’s Premier Scientific Fabric Care & Footwear Spa
@@ -7,7 +7,7 @@
 
 ## 1. Project Overview & Architecture
 
-Laundry Walii is built using a modern client-server architecture designed for the MERN stack.
+Laundry Waliiii is built using a modern client-server architecture designed for the MERN stack.
 
 ```
 laundrywaliiii/

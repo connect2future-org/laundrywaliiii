@@ -462,7 +462,7 @@ export const AdminPage = () => {
         >
           <div>
             <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.55rem', margin: 0, color: '#171421' }}>
-              Laundry Walii — Catalogue & Pricing Admin
+              Laundry Waliiii — Catalogue & Pricing Admin
             </h1>
             <p style={{ fontSize: '0.84rem', color: '#77717D', margin: '0.2rem 0 0' }}>
               Signed in as <strong>{adminUser.fullName}</strong> ({adminUser.role})
@@ -995,7 +995,7 @@ export const AdminPage = () => {
                       Order Details: {selectedOrderDetail.order?.bookingId}
                     </h3>
                     <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.82rem', color: '#6B7280' }}>
-                      Payment: <strong>Cash on Delivery (COD)</strong> · Status: <strong>{selectedOrderDetail.order?.paymentStatus || 'pending'}</strong> · Hub: <strong>{selectedOrderDetail.order?.branchId?.name || 'Laundry Waliii – Mysore'}</strong>
+                      Payment: <strong>Cash on Delivery (COD)</strong> · Status: <strong>{selectedOrderDetail.order?.paymentStatus || 'pending'}</strong> · Hub: <strong>{selectedOrderDetail.order?.branchId?.name || 'Laundry Waliiii – Mysore'}</strong>
                     </p>
                   </div>
                   <button type="button" onClick={() => setSelectedOrderDetail(null)} className="btn-pill-outline" style={{ padding: '0.35rem 0.9rem', fontSize: '0.8rem' }}>
