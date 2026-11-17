@@ -1,17 +1,40 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Phone, MapPin, Mail } from 'lucide-react';
 import { BRAND_CONFIG } from '../../config/brand';
 import { PRIMARY_BRANCH } from '../../config/branches';
 import { servicesApi } from '../../services/api';
 
 export const Footer = () => {
+  const location = useLocation();
   const [footerServices, setFooterServices] = useState([
-    { name: 'Wash & Fold', slug: 'wash-fold' },
-    { name: 'Wash & Iron', slug: 'wash-iron' },
-    { name: 'Dry Cleaning', slug: 'dry-cleaning' },
-    { name: 'Shoe Cleaning', slug: 'shoe-cleaning' },
+    { name: 'Wash & Fold', slug: 'wash-fold', categorySlug: 'wash-fold' },
+    { name: 'Wash & Iron', slug: 'wash-iron', categorySlug: 'wash-iron' },
+    { name: 'Dry Cleaning', slug: 'dry-cleaning', categorySlug: 'dry-cleaning' },
+    { name: 'Shoe Cleaning', slug: 'shoe-cleaning', categorySlug: 'shoe-cleaning' },
   ]);
+
+  const handleQuickLinkClick = (targetPath) => () => {
+    if (location.pathname === targetPath) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleServiceClick = (targetSlug) => () => {
+    if (location.pathname === '/services') {
+      const el = document.getElementById(targetSlug);
+      if (el) {
+        const headerOffset = 96;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+      }
+      window.dispatchEvent(new CustomEvent('service-hash-navigate', { detail: { slug: targetSlug } }));
+    }
+  };
 
   useEffect(() => {
     let active = true;
@@ -116,10 +139,10 @@ export const Footer = () => {
           <div className="footer-col col-quick-links">
             <h4 className="footer-col-title">QUICK LINKS</h4>
             <ul className="footer-nav-list">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/franchise">Franchise</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/" onClick={handleQuickLinkClick('/')}>Home</Link></li>
+              <li><Link to="/services" onClick={handleQuickLinkClick('/services')}>Services</Link></li>
+              <li><Link to="/franchise" onClick={handleQuickLinkClick('/franchise')}>Franchise</Link></li>
+              <li><Link to="/contact" onClick={handleQuickLinkClick('/contact')}>Contact Us</Link></li>
             </ul>
           </div>
 
@@ -130,11 +153,19 @@ export const Footer = () => {
           <div className="footer-col col-services">
             <h4 className="footer-col-title">OUR SERVICES</h4>
             <ul className="footer-nav-list">
-              {footerServices.map((cat) => (
-                <li key={cat.slug || cat.categorySlug || cat.name}>
-                  <Link to="/services">{cat.name}</Link>
-                </li>
-              ))}
+              {footerServices.map((cat) => {
+                const slug = cat.slug || cat.categorySlug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                return (
+                  <li key={slug}>
+                    <Link
+                      to={`/services#${slug}`}
+                      onClick={handleServiceClick(slug)}
+                    >
+                      {cat.name}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

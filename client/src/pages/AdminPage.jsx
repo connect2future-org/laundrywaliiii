@@ -971,7 +971,7 @@ export const AdminPage = () => {
                     </div>
 
                     <div style={{ fontSize: '0.82rem', color: '#77717D', marginTop: '0.2rem' }}>
-                      Subtotal: {formatINR(ord.subtotal)} · Delivery: {ord.deliveryFee === 0 ? 'FREE' : formatINR(ord.deliveryFee)} · Total: <strong style={{ color: '#850078', fontSize: '0.95rem' }}>{formatINR(ord.totalAmount)}</strong>
+                      Subtotal: {formatINR(ord.subtotal)} · Delivery: {ord.deliveryFee === 0 ? 'Included' : formatINR(ord.deliveryFee)} · Total: <strong style={{ color: '#850078', fontSize: '0.95rem' }}>{formatINR(ord.totalAmount)}</strong>
                     </div>
                   </div>
 

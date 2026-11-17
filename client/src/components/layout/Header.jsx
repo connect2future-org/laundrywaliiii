@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
+import { getBookPickupWhatsAppUrl } from '../../utils/whatsapp';
 import MobileNav from './MobileNav';
 
 export const Header = () => {
@@ -69,9 +70,15 @@ export const Header = () => {
               {itemCount > 0 && <span className="navbar-cart-badge">{itemCount}</span>}
             </button>
 
-            <Link to="/contact" className="navbar-book-btn">
+            <a
+              href={getBookPickupWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-book-btn"
+              aria-label="Book Laundry Pickup on WhatsApp"
+            >
               <span>Book Pickup</span>
-            </Link>
+            </a>
 
             {/* Mobile Hamburger Button */}
             <button

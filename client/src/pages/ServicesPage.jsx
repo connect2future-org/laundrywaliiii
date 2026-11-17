@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, useLocation } from 'react-router-dom';
 import { servicesApi } from '../services/api';
 import { formatPricingUnit } from '../config/services';
 import ServiceCard from '../components/services/ServiceCard';
@@ -26,6 +26,7 @@ export const ServicesPage = () => {
   const [loadError, setLoadError] = useState('');
   const [activeModalService, setActiveModalService] = useState(null);
 
+  const location = useLocation();
   const carouselTrackRef = useRef(null);
   const [activeCarouselIndex, setActiveCarouselIndex] = useState(0);
 
@@ -41,7 +42,7 @@ export const ServicesPage = () => {
     setActiveCarouselIndex(Math.min(categories.length - 1, Math.max(0, index)));
   }, [categories.length]);
 
-  const scrollToCarouselCard = (idx) => {
+  const scrollToCarouselCard = useCallback((idx) => {
     const el = carouselTrackRef.current;
     if (!el) return;
     const cards = el.querySelectorAll('.services-grid-slot');
@@ -49,7 +50,62 @@ export const ServicesPage = () => {
       cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
       setActiveCarouselIndex(idx);
     }
-  };
+  }, []);
+
+  const scrollToHashTarget = useCallback(
+    (targetSlug) => {
+      if (!targetSlug) return false;
+      const cleanSlug = targetSlug.replace(/^#/, '').trim();
+      if (!cleanSlug) return false;
+
+      const element = document.getElementById(cleanSlug);
+      if (element) {
+        const headerOffset = 96;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+
+        if (carouselTrackRef.current && Array.isArray(categories)) {
+          const catIdx = categories.findIndex(
+            (c) => (c.categorySlug || c.slug) === cleanSlug
+          );
+          if (catIdx !== -1) {
+            scrollToCarouselCard(catIdx);
+          }
+        }
+        return true;
+      }
+      return false;
+    },
+    [categories, scrollToCarouselCard]
+  );
+
+  // Hash target scroll effect (handles cross-page entry and in-page hash changes)
+  useEffect(() => {
+    if (!location.hash) return;
+    const cleanSlug = location.hash.replace(/^#/, '').trim();
+    if (isLoading) return;
+
+    const timer = setTimeout(() => {
+      scrollToHashTarget(cleanSlug);
+    }, 80);
+
+    return () => clearTimeout(timer);
+  }, [location.hash, isLoading, categories, scrollToHashTarget]);
+
+  // In-page hash navigation event listener (handles repeated clicks on footer quick links)
+  useEffect(() => {
+    const handleCustomNav = (e) => {
+      if (e.detail?.slug) {
+        scrollToHashTarget(e.detail.slug);
+      }
+    };
+    window.addEventListener('service-hash-navigate', handleCustomNav);
+    return () => window.removeEventListener('service-hash-navigate', handleCustomNav);
+  }, [scrollToHashTarget]);
 
   const {
     cartItems,
@@ -225,8 +281,13 @@ export const ServicesPage = () => {
               >
                 {categories.map((category) => {
                   const directCartItem = getDirectCartItem(category);
+                  const slug = category.categorySlug || category.slug;
                   return (
-                    <div key={category._id || category.categorySlug} className="services-grid-slot">
+                    <div
+                      key={category._id || slug}
+                      id={slug}
+                      className="services-grid-slot"
+                    >
                       <ServiceCard
                         category={category}
                         cartQuantity={directCartItem ? directCartItem.quantity : 0}
@@ -373,8 +434,8 @@ export const ServicesPage = () => {
 
                 <div className="summary-row">
                   <span className="summary-label">Doorstep Pickup & Delivery:</span>
-                  <span className={`summary-val ${deliveryFee === 0 ? 'text-free' : ''}`}>
-                    {deliveryFee === 0 ? 'FREE' : formatINR(deliveryFee)}
+                  <span className="summary-val">
+                    {deliveryFee === 0 ? 'Included' : formatINR(deliveryFee)}
                   </span>
                 </div>
 
@@ -514,6 +575,7 @@ export const ServicesPage = () => {
           display: flex;
           flex-direction: column;
           min-width: 0;
+          scroll-margin-top: 96px;
         }
 
         .showcase-nav-btn {

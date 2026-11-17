@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { X, Phone, Truck } from 'lucide-react';
 import { BRAND_CONFIG } from '../../config/brand';
+import { getBookPickupWhatsAppUrl } from '../../utils/whatsapp';
 
 export const MobileNav = ({ isOpen, onClose, navLinks }) => {
   useEffect(() => {
@@ -132,15 +133,18 @@ export const MobileNav = ({ isOpen, onClose, navLinks }) => {
             <span>Call: {BRAND_CONFIG.contact.phone}</span>
           </a>
 
-          <Link
-            to="/services"
+          <a
+            href={getBookPickupWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={onClose}
             className="btn-pill-primary"
             style={{ width: '100%', justifyContent: 'center', padding: '0.85rem', fontSize: '0.92rem' }}
+            aria-label="Book Laundry Pickup on WhatsApp"
           >
             <Truck size={17} />
             <span>Book Pickup</span>
-          </Link>
+          </a>
 
           {/* Social Channels (Instagram & WhatsApp Only) */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.85rem', paddingTop: '0.35rem' }}>

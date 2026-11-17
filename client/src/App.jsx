@@ -14,16 +14,21 @@ const BranchDetailsPage = lazy(() => import('./pages/BranchDetailsPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const AdminPage = lazy(() => import('./pages/AdminPage'));
 
-// Scroll to top helper
+// Scroll to top helper (respects in-page hash anchors)
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    if (!hash) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      // Instantly reset scroll to top on route change so hash scroll has clean origin
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return null;

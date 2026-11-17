@@ -126,33 +126,36 @@ export const CartDrawer = ({ onProceedToCheckout }) => {
           </div>
         </div>
 
-        {/* Free Delivery Tracker */}
+        {/* Doorstep Pickup & Delivery Banner */}
         {cartItems.length > 0 && (
           <div
             style={{
-              padding: '0.85rem 1.5rem',
-              background: amountToFreeDelivery === 0 ? '#E8F8F0' : 'var(--color-pink-soft)',
-              borderBottom: '1px solid var(--color-border)'
+              padding: '0.75rem 1.25rem',
+              background: '#FAF2FB',
+              borderBottom: '1px solid var(--color-border)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.65rem'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.8rem', fontWeight: 600 }}>
-              <span style={{ color: amountToFreeDelivery === 0 ? '#0E8548' : 'var(--color-pink)' }}>
-                {amountToFreeDelivery === 0 ? '🎉 You unlocked FREE Doorstep Pickup & Delivery!' : `Add ${formatINR(amountToFreeDelivery)} more for FREE Doorstep Pickup!`}
-              </span>
-              <span style={{ color: amountToFreeDelivery === 0 ? '#0E8548' : 'var(--color-pink)' }}>
-                {freeDeliveryProgress}%
-              </span>
+            <div
+              style={{
+                width: '28px',
+                height: '28px',
+                borderRadius: '50%',
+                background: 'rgba(112, 15, 99, 0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#700F63',
+                flexShrink: 0
+              }}
+            >
+              <Truck size={14} />
             </div>
-            <div style={{ width: '100%', height: '6px', background: 'rgba(0,0,0,0.06)', borderRadius: '999px', overflow: 'hidden' }}>
-              <div
-                style={{
-                  width: `${freeDeliveryProgress}%`,
-                  height: '100%',
-                  background: amountToFreeDelivery === 0 ? '#10B981' : 'var(--color-pink-primary)',
-                  transition: 'width 0.3s ease'
-                }}
-              />
-            </div>
+            <span style={{ fontSize: '0.8rem', color: '#45414D', fontWeight: 600 }}>
+              Convenient Doorstep Pickup &amp; Delivery Available Across Mysore
+            </span>
           </div>
         )}
 
@@ -233,8 +236,8 @@ export const CartDrawer = ({ onProceedToCheckout }) => {
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                   <Truck size={14} /> Doorstep Pickup & Delivery
                 </span>
-                <span style={{ fontWeight: 600, color: deliveryFee === 0 ? '#10B981' : 'var(--color-dark)' }}>
-                  {deliveryFee === 0 ? 'FREE' : formatINR(deliveryFee)}
+                <span style={{ fontWeight: 600, color: 'var(--color-dark)' }}>
+                  {deliveryFee === 0 ? 'Included' : formatINR(deliveryFee)}
                 </span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--color-muted)' }}>

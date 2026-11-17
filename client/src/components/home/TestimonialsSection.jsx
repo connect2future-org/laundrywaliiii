@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { MessageSquare, Truck } from 'lucide-react';
+import { getBookPickupWhatsAppUrl } from '../../utils/whatsapp';
 
 export const TestimonialsSection = () => {
   return (
@@ -84,14 +84,17 @@ export const TestimonialsSection = () => {
             We are collecting verified reviews from our first customers across Mysore. Experience our hygienic doorstep fabric care and share your thoughts with us.
           </p>
 
-          <Link
-            to="/services"
+          <a
+            href={getBookPickupWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-pill-primary"
             style={{ padding: '0.85rem 2.2rem', fontSize: '0.95rem' }}
+            aria-label="Schedule Your First Pickup on WhatsApp"
           >
             <Truck size={17} />
             <span>Schedule Your First Pickup</span>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

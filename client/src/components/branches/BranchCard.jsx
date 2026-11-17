@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, ExternalLink, Sparkles, CheckCircle2 } from 'lucide-react';
+import { getBookPickupWhatsAppUrl } from '../../utils/whatsapp';
 
 export const BranchCard = ({ branch }) => {
   return (
@@ -69,10 +70,16 @@ export const BranchCard = ({ branch }) => {
           <ExternalLink size={15} />
         </a>
 
-        <Link to="/services" className="btn-branch-pickup">
+        <a
+          href={getBookPickupWhatsAppUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-branch-pickup"
+          aria-label="Book Doorstep Pickup on WhatsApp"
+        >
           <Sparkles size={16} />
           <span>Book Doorstep Pickup</span>
-        </Link>
+        </a>
       </div>
 
       <style>{`

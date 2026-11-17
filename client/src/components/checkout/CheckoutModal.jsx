@@ -307,7 +307,7 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
 ${itemsSummary || '• Standard wash & care package'}
 
 💰 *Subtotal:* ${formatINR(subtotal)}
-🚚 *Pickup & Delivery:* ${deliveryFee === 0 ? 'FREE' : formatINR(deliveryFee)}
+🚚 *Pickup & Delivery:* ${deliveryFee === 0 ? 'Included' : formatINR(deliveryFee)}
 ✨ *Total Payable Amount:* ${totalAmount}
 💵 *Payment Method:* Cash on Delivery (COD)
 💳 *Payment Status:* Pending (Pay upon delivery)${notes}

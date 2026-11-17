@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { BRANCHES_DATA, PRIMARY_BRANCH } from '../config/branches';
 import { MapPin, Phone, ExternalLink, ArrowLeft, CheckCircle2, Sparkles } from 'lucide-react';
+import { getBookPickupWhatsAppUrl } from '../utils/whatsapp';
 
 export const BranchDetailsPage = () => {
   const { branchId } = useParams();
@@ -91,9 +92,15 @@ export const BranchDetailsPage = () => {
               <ExternalLink size={15} />
             </a>
 
-            <Link to="/services" className="btn-secondary-book">
+            <a
+              href={getBookPickupWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary-book"
+              aria-label="Book Doorstep Pickup on WhatsApp"
+            >
               <span>Book Doorstep Pickup</span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

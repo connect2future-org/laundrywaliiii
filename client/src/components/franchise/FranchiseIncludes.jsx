@@ -246,11 +246,110 @@ export const FranchiseIncludes = () => {
         }
 
         @media (max-width: 640px) {
-          .includes-benefits-grid {
-            grid-template-columns: 1fr;
-          }
           .franchise-includes-section {
-            padding: 4rem 0;
+            padding: 3rem 0;
+          }
+
+          .includes-header {
+            margin: 0 auto 2rem;
+          }
+
+          .includes-main-heading {
+            font-size: 1.85rem;
+            margin-bottom: 0.5rem;
+          }
+
+          .includes-subheading {
+            font-size: 0.92rem;
+            line-height: 1.5;
+          }
+
+          .includes-benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+          }
+
+          .benefit-card {
+            padding: 1.1rem 0.95rem;
+            border-radius: 14px;
+          }
+
+          .benefit-header {
+            margin-bottom: 0.75rem;
+          }
+
+          .benefit-icon-wrap {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+          }
+
+          .benefit-icon-wrap svg {
+            width: 20px;
+            height: 20px;
+          }
+
+          .benefit-tag {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.45rem;
+            letter-spacing: 0.04em;
+          }
+
+          .benefit-title {
+            font-size: 0.98rem;
+            line-height: 1.3;
+            margin: 0 0 0.4rem;
+          }
+
+          .benefit-description {
+            font-size: 0.8rem;
+            line-height: 1.45;
+          }
+
+          /* 7th item occupies the remaining space naturally across both columns */
+          .benefit-card:nth-child(7) {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #FAF7FC 0%, #F5EEF8 100%);
+            border-color: rgba(112, 15, 99, 0.22);
+          }
+        }
+
+        @media (max-width: 420px) {
+          .includes-benefits-grid {
+            gap: 0.6rem;
+          }
+
+          .benefit-card {
+            padding: 0.95rem 0.8rem;
+          }
+
+          .benefit-icon-wrap {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+          }
+
+          .benefit-icon-wrap svg {
+            width: 18px;
+            height: 18px;
+          }
+
+          .benefit-tag {
+            font-size: 0.6rem;
+            padding: 0.18rem 0.4rem;
+          }
+
+          .benefit-title {
+            font-size: 0.9rem;
+            line-height: 1.25;
+            margin: 0 0 0.35rem;
+          }
+
+          .benefit-description {
+            font-size: 0.75rem;
+            line-height: 1.4;
           }
         }
       `}</style>

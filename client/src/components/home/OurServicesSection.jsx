@@ -87,7 +87,7 @@ export const OurServicesSection = () => {
             </p>
           ) : (
             services.map((srv) => (
-              <Link key={srv._id || srv.categorySlug} to="/services" className="service-vertical-card">
+              <Link key={srv._id || srv.categorySlug} to={`/services#${srv.categorySlug || srv.slug}`} className="service-vertical-card">
                 <div className="service-card-thumb-wrap">
                   <img
                     src={srv.image || '/images/sakura/service-wash-fold.png'}

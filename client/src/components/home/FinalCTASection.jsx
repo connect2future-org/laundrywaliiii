@@ -1,18 +1,8 @@
 import React from 'react';
-import { Link, useOutletContext } from 'react-router-dom';
 import { Truck } from 'lucide-react';
+import { getBookPickupWhatsAppUrl } from '../../utils/whatsapp';
 
 export const FinalCTASection = () => {
-  const outletCtx = useOutletContext();
-  const openCheckout = outletCtx?.openCheckout;
-
-  const handleBookClick = (e) => {
-    if (openCheckout) {
-      e.preventDefault();
-      openCheckout();
-    }
-  };
-
   return (
     <section className="sakura-cta-section" aria-label="Book Pickup Call to Action">
       <div className="container cta-content-container">
@@ -29,21 +19,16 @@ export const FinalCTASection = () => {
 
         {/* Action Button: Deep Purple Book Pickup */}
         <div className="cta-action-wrap">
-          {openCheckout ? (
-            <button
-              type="button"
-              onClick={handleBookClick}
-              className="btn-cta-berry"
-            >
-              <Truck size={19} strokeWidth={2.2} />
-              <span>Book Pickup</span>
-            </button>
-          ) : (
-            <Link to="/contact" className="btn-cta-berry">
-              <Truck size={19} strokeWidth={2.2} />
-              <span>Book Pickup</span>
-            </Link>
-          )}
+          <a
+            href={getBookPickupWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cta-berry"
+            aria-label="Book Pickup on WhatsApp"
+          >
+            <Truck size={19} strokeWidth={2.2} />
+            <span>Book Pickup</span>
+          </a>
         </div>
       </div>
 

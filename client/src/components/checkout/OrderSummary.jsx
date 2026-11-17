@@ -109,8 +109,8 @@ export const OrderSummary = ({ customerData, addressData, scheduleData, branchDa
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--color-muted)' }}>
           <span>Pickup & Delivery Fee</span>
-          <span style={{ color: deliveryFee === 0 ? '#10B981' : 'inherit', fontWeight: 600 }}>
-            {deliveryFee === 0 ? 'FREE' : formatINR(deliveryFee)}
+          <span style={{ fontWeight: 600 }}>
+            {deliveryFee === 0 ? 'Included' : formatINR(deliveryFee)}
           </span>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--color-muted)' }}>

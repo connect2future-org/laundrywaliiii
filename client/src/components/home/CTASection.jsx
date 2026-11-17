@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import { Truck, Phone } from 'lucide-react';
 import { BRAND_CONFIG } from '../../config/brand';
+import { getBookPickupWhatsAppUrl } from '../../utils/whatsapp';
 
 export const CTASection = () => {
   return (
@@ -72,14 +72,17 @@ export const CTASection = () => {
               alignItems: 'center'
             }}
           >
-            <Link
-              to="/services"
+            <a
+              href={getBookPickupWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-pill-primary"
               style={{ padding: '1rem 2.6rem', fontSize: '1.02rem' }}
+              aria-label="Book Pickup on WhatsApp"
             >
               <Truck size={18} />
               <span>Book Pickup</span>
-            </Link>
+            </a>
 
             <a
               href={BRAND_CONFIG.contact.telHref}

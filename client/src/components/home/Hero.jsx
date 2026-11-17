@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Truck, ArrowRight } from 'lucide-react';
+import { getBookPickupWhatsAppUrl } from '../../utils/whatsapp';
 
 export const Hero = () => {
   return (
@@ -20,10 +21,16 @@ export const Hero = () => {
 
         {/* Action Buttons: Book Pickup & Our Services */}
         <div className="hero-actions-wrap">
-          <Link to="/contact" className="btn-hero-book">
+          <a
+            href={getBookPickupWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-hero-book"
+            aria-label="Book Doorstep Laundry Pickup on WhatsApp"
+          >
             <Truck size={18} strokeWidth={2.2} />
             <span>Book Pickup</span>
-          </Link>
+          </a>
 
           <Link to="/services" className="btn-hero-services">
             <span>Our Services</span>

@@ -17,7 +17,7 @@ export const BranchesPage = () => {
     if (matchedBranch) {
       setSearchResult({
         serviceable: true,
-        message: `PIN ${clean} is serviced directly by ${matchedBranch.name}. Free doorstep pickup & delivery available!`,
+        message: `PIN ${clean} is serviced directly by ${matchedBranch.name}. Doorstep pickup & delivery available!`,
         branch: matchedBranch
       });
     } else {
@@ -46,7 +46,7 @@ export const BranchesPage = () => {
             </h1>
 
             <p className="branches-subheading">
-              Visit our primary physical studio at Kuvempu Trust Building on KD Road or schedule a complimentary doorstep pickup anywhere across Mysore.
+              Visit our primary physical studio at Kuvempu Trust Building on KD Road or schedule convenient doorstep pickup anywhere across Mysore.
             </p>
 
             {/* Pincode Search Bar */}
